@@ -5,7 +5,7 @@ title = "Shusio のメモ"
 publishDir = "docs"
 theme = "hugo_theme_robust"
 #googleAnalytics = "UA-XXXXXXXX-XX" # Optional
-#disqusShortname = "XYW"
+disqusShortname = "https-shusio-com"
 hasCJKLanguage = true
 
 [params]
