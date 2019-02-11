@@ -6,6 +6,7 @@ publishDir = "docs"
 theme = "hugo_theme_robust"
 #googleAnalytics = "UA-XXXXXXXX-XX" # Optional
 #disqusShortname = "XYW"
+hasCJKLanguage = true
 
 [params]
   AuthorName = "shusio"

@@ -9,6 +9,8 @@ author: shusio
 はじめまして！
 テストも兼ねて Hugo で遊んでみます。
 
+<!--more-->
+
 [元ファイル](http://github.com/4XSA5yltIDO0Hcuw/shusio.com/blob/master/content/post/my-first-post.md)
 
 Markdown でいつものように挿入できる

@@ -17,13 +17,8 @@
       <pubDate>Mon, 11 Feb 2019 10:05:08 +0900</pubDate>
       
       <guid>https://shusio.com/post/my-first-post/</guid>
-      <description>はじめまして！ テストも兼ねて Hugo で遊んでみます。
-元ファイル
-Markdown でいつものように挿入できる
-def test(): print &amp;quot;Hello world!&amp;quot;  Gist も貼ってみる 
-Jupyter notebook もついでに 
-画像も  画像テストです。   ツイートも はじめまして
-&amp;mdash; shusio (@shusio1) February 11, 2019  Youtube も。 BotW も 30 分切るようになるとは驚きです。   </description>
+      <description>&lt;p&gt;はじめまして！
+テストも兼ねて Hugo で遊んでみます。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,12 +27,7 @@ Jupyter notebook もついでに
       <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://shusio.com/about/</guid>
-      <description>このブログは shusio の日記兼備忘録です。
-プログラミング、資産運用、ゲーム、漫画、映画、野球、英会話、などなどなんでもありです。
-30 代コンピュータ系会社の研究員なのでインドアな話が多めですがよろしくお願いします。
-連絡は 4XSA5yltIDO0Hcuw@gmail.com またはツイッターへお願いします。
-ブログで使用されている素材はフリーのものです。問題がありましたら連絡をお願いします。
- このサイト全体のフレームワーク：Hugo テーマ 画像素材：FLAT ICON DESIGN  </description>
+      <description>&lt;p&gt;このブログは shusio の日記兼備忘録です。&lt;/p&gt;</description>
     </item>
     
   </channel>
