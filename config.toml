@@ -1,8 +1,13 @@
 baseURL = "https://shusio.com/"
+footnoteReturnLinkContents = "↩"
 languageCode = "ja-JP"
-title = "しゅしおの備忘録"
-
+title = "Shusio のメモ"
+publishDir = "docs"
 theme = "jeffprod"
+
+[params]
+    AuthorName = "shusio"
+    GitHubUser = "4XSA5yltIDO0Hcuw"
 
 [permalinks]
     post = "/:year/:filename"
