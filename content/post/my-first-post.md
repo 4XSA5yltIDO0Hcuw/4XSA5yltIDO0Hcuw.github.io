@@ -9,8 +9,7 @@ author: shusio
 はじめまして！
 テストも兼ねて Hugo で遊んでみます。
 
-元ファイル：
-[http://github.com/4XSA5yltIDO0Hcuw/shusio.com/blob/master/content/post/my-first-post.md](http://github.com/4XSA5yltIDO0Hcuw/shusio.com/blob/master/content/post/my-first-post.md)
+[元ファイル](http://github.com/4XSA5yltIDO0Hcuw/shusio.com/blob/master/content/post/my-first-post.md)
 
 Markdown でいつものように挿入できる
 ```python
