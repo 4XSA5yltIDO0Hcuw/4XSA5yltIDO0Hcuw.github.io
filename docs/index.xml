@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>しゅしおの備忘録</title>
+    <link>https://shusio.com/</link>
+    <description>Recent content on しゅしおの備忘録</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Mon, 11 Feb 2019 10:05:08 +0900</lastBuildDate>
+    
+        <atom:link href="https://shusio.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>初投稿</title>
+      <link>https://shusio.com/2019/my-first-post/</link>
+      <pubDate>Mon, 11 Feb 2019 10:05:08 +0900</pubDate>
+      
+      <guid>https://shusio.com/2019/my-first-post/</guid>
+      <description>はじめまして！ テストも兼ねて Hugo で遊んでみます。
+元ファイル： http://github.com/4XSA5yltIDO0Hcuw/shusio.com/blob/master/content/post/my-first-post.md
+Markdown でいつものように挿入できる
+def test(): print &amp;quot;Hello world!&amp;quot;  Gist も貼ってみる 
+Jupyter notebook もついでに 
+画像も  画像テストです。   ツイートも はじめまして
+&amp;mdash; shusio (@shusio1) February 11, 2019  Youtube も。 BotW も 30 分切るようになるとは驚きです。   </description>
+    </item>
+    
+    <item>
+      <title>このブログについて</title>
+      <link>https://shusio.com/about/</link>
+      <pubDate>Mon, 11 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shusio.com/about/</guid>
+      <description>このブログは shusio の日記兼備忘録です。
+プログラミング、資産運用、ゲーム、漫画、映画、野球、英会話、などなどなんでもありです。
+30 代コンピュータ系会社の研究員なのでインドアな話が多めですがよろしくお願いします。
+連絡は 4XSA5yltIDO0Hcuw@gmail.com またはツイッターへお願いします。
+ブログで使用されている素材はフリーのものです。問題がありましたら連絡をお願いします。
+ このサイト全体のフレームワーク：Hugo テーマ：JeffProd 画像素材：FLAT ICON DESIGN  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,12 @@
+baseURL = "https://shusio.com/"
+languageCode = "ja-JP"
+title = "しゅしおの備忘録"
+
+theme = "jeffprod"
+
+[permalinks]
+    post = "/:year/:filename"
+
+[taxonomies]
+    tag = "tags"
+    archive = "archives"
