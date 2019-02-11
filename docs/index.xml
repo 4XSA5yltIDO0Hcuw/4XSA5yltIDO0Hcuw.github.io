@@ -18,7 +18,7 @@
       
       <guid>https://shusio.com/2019/my-first-post/</guid>
       <description>はじめまして！ テストも兼ねて Hugo で遊んでみます。
-元ファイル： http://github.com/4XSA5yltIDO0Hcuw/shusio.com/blob/master/content/post/my-first-post.md
+元ファイル
 Markdown でいつものように挿入できる
 def test(): print &amp;quot;Hello world!&amp;quot;  Gist も貼ってみる 
 Jupyter notebook もついでに 
