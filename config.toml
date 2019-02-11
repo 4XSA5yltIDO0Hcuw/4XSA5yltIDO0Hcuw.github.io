@@ -3,15 +3,34 @@ footnoteReturnLinkContents = "↩"
 languageCode = "ja-JP"
 title = "Shusio のメモ"
 publishDir = "docs"
-theme = "jeffprod"
+theme = "hugo_theme_robust"
+#googleAnalytics = "UA-XXXXXXXX-XX" # Optional
+#disqusShortname = "XYW"
 
 [params]
-    AuthorName = "shusio"
-    GitHubUser = "4XSA5yltIDO0Hcuw"
+  AuthorName = "shusio"
+  description = "プログラミング、資産運用、ゲーム、野球、などなどなんでもあり"
+  dateformat = "Jan 2, 2006" # Optional
+  # Fonts settings.
+  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
+  fontfamily = "Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif" # Optional, Override body font family.
+  logofontfamily = "Lobster, cursive" # Optional, Override logo font.
 
-[permalinks]
-    post = "/:year/:filename"
+[params.author]
+#  thumbnail = "images/author.jpg"
+  name = "shusio"
+#  description = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p><p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+  description = "<p>情報系の研究員、30代。</p>"
+#  facebook = "https://www.facebook.com/daisuke.tsuji.735"
+  twitter = "https://twitter.com/shusio1"
+  github = "https://github.com/4XSA5yltIDO0Hcuw"
 
-[taxonomies]
-    tag = "tags"
-    archive = "archives"
+[outputs]
+  page = [ "HTML", "AMP" ] # if you want AMP enable.
+
+#[permalinks]
+#    post = "/:year/:filename"
+
+#[taxonomies]
+#    tag = "tags"
+#    archive = "archives"

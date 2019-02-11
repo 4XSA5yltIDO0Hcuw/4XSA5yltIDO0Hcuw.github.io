@@ -15,6 +15,6 @@ menu = "main"
 ブログで使用されている素材はフリーのものです。問題がありましたら連絡をお願いします。
 
 + このサイト全体のフレームワーク：[Hugo](https://gohugo.io/)
-+ テーマ：[JeffProd](https://en.jeffprod.com/)
++ [テーマ](https://github.com/dim0627/hugo_theme_robust)
 + 画像素材：[FLAT ICON DESIGN](http://flat-icon-design.com)
 
