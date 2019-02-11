@@ -4,7 +4,7 @@ languageCode = "ja-JP"
 title = "Shusio のメモ"
 publishDir = "docs"
 theme = "hugo_theme_robust"
-#googleAnalytics = "UA-XXXXXXXX-XX" # Optional
+googleAnalytics = "UA-134256036-1" # Optional
 disqusShortname = "https-shusio-com"
 hasCJKLanguage = true
 
