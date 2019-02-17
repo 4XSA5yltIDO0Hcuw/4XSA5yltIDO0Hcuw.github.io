@@ -26,8 +26,7 @@ hasCJKLanguage = true
   github = "https://github.com/4XSA5yltIDO0Hcuw"
 
 [outputs]
-#  page = [ "HTML", "AMP" ] # if you want AMP enable.
-  page = [ "HTML" ] # if you want AMP enable.
+  page = [ "HTML", "AMP" ] # if you want AMP enable.
 
 #[permalinks]
 #    post = "/:year/:filename"

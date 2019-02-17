@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+{{ with .Site.Params.contact }}<meta name="contact" content="{{ . }}">{{ end }}
+{{ .Hugo.Generator }}
+
+<link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico" />
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}media/author.png" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}media/author.png" sizes="96x96">
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}media/author.png" sizes="194x194">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}media/author.png" sizes="192x192">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="RCC Rick Cogley Central">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ .Site.BaseURL }}media/author.png">
+{{ with .RSSLink }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ . }}">{{ end }}
+
+<link rel="canonical" href="{{ .Permalink }}">
+
