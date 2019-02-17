@@ -1,7 +1,7 @@
 baseURL = "https://shusio.com/"
 footnoteReturnLinkContents = "↩"
 languageCode = "ja-JP"
-title = "Shusio のメモ"
+title = "Shusio の研究レポート"
 publishDir = "docs"
 theme = "hugo_theme_robust"
 googleAnalytics = "UA-134256036-1" # Optional
@@ -10,7 +10,7 @@ hasCJKLanguage = true
 
 [params]
   AuthorName = "shusio"
-  description = "プログラミング、資産運用、ゲーム、野球、などなどなんでもあり"
+  description = "投資など、日々の生活で得られた知識をまとめます"
   dateformat = "Jan 2, 2006" # Optional
   # Fonts settings.
   googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
@@ -18,20 +18,21 @@ hasCJKLanguage = true
   logofontfamily = "Lobster, cursive" # Optional, Override logo font.
 
 [params.author]
-#  thumbnail = "images/author.jpg"
+  thumbnail = "media/author.png"
   name = "shusio"
-#  description = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p><p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
   description = "<p>情報系の研究員、30代。</p>"
 #  facebook = "https://www.facebook.com/daisuke.tsuji.735"
   twitter = "https://twitter.com/shusio1"
   github = "https://github.com/4XSA5yltIDO0Hcuw"
 
 [outputs]
-  page = [ "HTML", "AMP" ] # if you want AMP enable.
+#  page = [ "HTML", "AMP" ] # if you want AMP enable.
+  page = [ "HTML" ] # if you want AMP enable.
 
 #[permalinks]
 #    post = "/:year/:filename"
 
-#[taxonomies]
-#    tag = "tags"
-#    archive = "archives"
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    serires = "series"

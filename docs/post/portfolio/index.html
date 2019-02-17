@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+<link rel="apple-touch-icon" href="https://shusio.com/images/logo.png">
+
+
+<link rel="canonical" href="https://shusio.com/post/portfolio/">
+
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する - Shusio の研究レポート</title>
+    
+
+<meta name="description" content="手数料が高いという WealthNavi のポートフォリオを別の投資信託で再現してみました">
+
+<meta property="og:title" content="[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する - Shusio の研究レポート">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://shusio.com/post/portfolio/">
+<meta property="og:image" content="https://shusio.com/media/portfolio/cover.jpg">
+<meta property="og:site_name" content="Shusio の研究レポート">
+<meta property="og:description" content="手数料が高いという WealthNavi のポートフォリオを別の投資信託で再現してみました">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="Shusio の研究レポート" />
+<meta name="twitter:url" content="https://shusio.com/post/portfolio/" />
+<meta name="twitter:title" content="[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する - Shusio の研究レポート" />
+<meta name="twitter:description" content="手数料が高いという WealthNavi のポートフォリオを別の投資信託で再現してみました" />
+<meta name="twitter:image" content="https://shusio.com/media/portfolio/cover.jpg" />
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https://shusio.com/"
+    },
+    "headline": "[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する - Shusio の研究レポート",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://shusio.com/media/portfolio/cover.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-02-17T16:54:43JST",
+    "dateModified": "2019-02-17T16:54:43JST",
+    "author": {
+      "@type": "Person",
+      "name": "Shusio の研究レポート"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shusio の研究レポート",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://shusio.com/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "手数料が高いという WealthNavi のポートフォリオを別の投資信託で再現してみました"
+  }
+</script>
+
+
+    <style>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body img,article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(https://shusio.com/images/default.jpg); background-size: cover; background-position: center;}.thumb-ff641c752faff0b0c8d60960642aa6bd { background-image: url(https://shusio.com/media/portfolio/cover.jpg);}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+    </style>
+  </head>
+
+  <body>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-134256036-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="https://shusio.com/">Shusio の研究レポート</a>
+        </div>
+        
+<div class="description">
+  投資など、日々の生活で得られた知識をまとめます
+</div>
+
+
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<div class="mrow">
+  <div class="mcol c8">
+
+    <article class="sn">
+
+  <div class="thumb thumb-ff641c752faff0b0c8d60960642aa6bd"></div>
+
+  <header class="article-header">
+    <h1 class="title">[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-17T16:54:43JST">Feb 17, 2019</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://shusio.com/post/">POST</a></li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&title=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&text=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&t=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&title=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+  </header>
+
+  
+  <div class="toc">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#wealthnavi-のポートフォリオ">WealthNavi のポートフォリオ</a></li>
+<li><a href="#wealthnavi-の運用シミュレーション">WealthNavi の運用シミュレーション</a></li>
+<li><a href="#手数料と税金の問題">手数料と税金の問題</a></li>
+<li><a href="#wealthnavi-のポートフォリオを投資信託で再現する">WealthNavi のポートフォリオを投資信託で再現する</a></li>
+<li><a href="#国ごとの割合を換算する">国ごとの割合を換算する</a></li>
+<li><a href="#最終的なポートフォリオ">最終的なポートフォリオ</a></li>
+<li><a href="#ポートフォリオ詳細">ポートフォリオ詳細</a></li>
+</ul></li>
+<li><a href="#1-日興インデックスファンド海外株式ヘッジなし-dc-専用">1) 日興インデックスファンド海外株式ヘッジなし (DC 専用)</a></li>
+<li><a href="#2-三菱-ufj-dc-トピックスオープン">2) 三菱 UFJ DC トピックスオープン</a></li>
+<li><a href="#3-emaxis-slim-新興国株式インデックス">3) eMAXIS Slim 新興国株式インデックス</a></li>
+<li><a href="#4-iシェアーズゴールドインデックス">4) iシェアーズゴールドインデックス</a></li>
+<li><a href="#5-emaxis-slim先進国債インデックス">5) eMAXIS Slim先進国債インデックス</a></li>
+<li><a href="#6-ニッセイグローバルリートインデックス">6) ニッセイグローバルリートインデックス</a></li>
+</ul>
+</nav>
+  </div>
+  
+
+  <div class="article-body"><p>手数料が高いという WealthNavi のポートフォリオを別の投資信託で再現してみました。
+これでどこまで資産を伸ばせるかブログに記録していきます。</p>
+
+<p>確定拠出年金の縛りなど、個人個人で状況は異なるため全く同じ方法は難しいかもしれません。
+しかし、少しアレンジを加えれば多くの人が似たようなことをできると思います。</p>
+
+<p>ただし、万一この方法を参考にする場合はもちろん自己責任でお願いします。
+WealthNavi はリバランスや税金が減るようなうまい損出しを自動でやってくれるそうです。
+また、株式投資は感情を抑えられずに売買して失敗する場合も多々ありますが、WealthNavi では起こりにくいです。
+これらの特徴が手数料に見合う場合は絶対に WealthNavi で運用するべきです。</p>
+
+<h2 id="wealthnavi-のポートフォリオ">WealthNavi のポートフォリオ</h2>
+
+<p>WealthNavi は米国ETFを組み合わせてポートフォリオを組んでいます。
+以下、リスク許容度最大のときのポートフォリオです。金額は重要でなく、ここで注目してほしいのはその割合です。</p>
+
+<figure class="center">
+    <img src="/media/portfolio/portfolio-wealthnavi.png"
+         alt="長期運用シミュレーション"/> 
+</figure>
+
+
+<p>80% の資産が株式になります。ただし、国を分散させることでリスクを最小限にしています。
+また、株式以外にも国債や金、不動産を 20% 弱組み入れています。</p>
+
+<p>リスク許容度を下げていくと国債の比率が上がり、新興国株式の割合が減っていくようです。
+しかし、世界的な低金利もありますし、よく言われる国債の割合を年齢と同じにするというプラクティスは効果が小さい気はします。</p>
+
+<p>一方、<a href="https://www.amazon.co.jp/dp/B01EV83ORC/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">ウォール街のランダム・ウォーカー</a>などによると、株式は適切な分散をさせることによりリスクを下げつつリターンを得ることができると言われています。
+また、<a href="https://www.amazon.co.jp/dp/B079GRS1Z7/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">敗者のゲーム</a>ではダウ平均などの株式指標に勝つことは難しく、指標連動型の ETF を買うことが最適と言われています。</p>
+
+<p>実際、個人的にこの１年間日本や米国の個別株を売買するなど色々株式投資で試行錯誤してみたものの、会社ごとの予期できないリスクに加え、結局は地合＝指数の動きが個別株への影響力としてかなり大きいと感じています。
+その結果、例えば日本の金融株とバイオ株に分散しても、結局日経やダウ平均が下がると全部下がり分散している意味がないという事態が起こるわけです。</p>
+
+<p>結局このポートフォリオのように、国別の株式指標連動型の商品を多めにし、その他のアセットクラスを 20% くらいミックスするのがちょうどいいのかなと思っています。</p>
+
+<h2 id="wealthnavi-の運用シミュレーション">WealthNavi の運用シミュレーション</h2>
+
+<p>WealthNavi のリスク許容度最大のポートフォリオでは、初期費用 10 万円、月 6 万円積立し、期間30年とした場合、以下の結果が見込めるそうです。</p>
+
+<figure class="center">
+    <img src="/media/portfolio/simulation.png"
+         alt="WealthNaviプラン"/> 
+</figure>
+
+
+<p>50% の確率で 4912 万円、元本を引き算すると 2742 万円の利益が見込めるということです。
+70% の確率で 1551 万円の利益が見込めます。
+一応、高いと評判な手数料 1% は計算に含まれているようです。</p>
+
+<h2 id="手数料と税金の問題">手数料と税金の問題</h2>
+
+<p>長期投資において、手数料 (または信託報酬) や税金は利回りを大きく下げ、最終的な利益が小さくなると言われています。
+その結果、米国 ETF では手数料が 0.04% とかなりの低いものが人気となっています。</p>
+
+<p>手数料や税金のインパクトはシミュレーションで簡単に調べることができます。
+<a href="https://toshincost.net/simulation/">このサイト</a>を利用して、月 6 万円、年利 5% で 30 年間積み立てた場合の信託報酬 1% (ファンド A), 0.1% (ファンド B), 税金なし (費用ゼロ) の３パターンを比べると、</p>
+
+<figure class="center">
+    <img src="/media/portfolio/cost.png"
+         alt="手数料 1% vs. 0.1%"/> 
+</figure>
+
+
+<p>のようになります。
+最終的な利益は、税金なし (費用ゼロ) は 27,733,000 円のプラス、手数料 0.1% (ファンド B) は 21,546,221 円 のプラス、手数料 1% (ファンド A) は 15,215,678 円のプラスとなります。
+ざっくりいうと WealthNavi は年利 5% より良くなる可能性が 70% 以上はあるようです。</p>
+
+<p>上記のシミュレーションでは分配金はゼロにしていますが、年間の合計利率を同じ 5% にして、そのうち 3% が分配金から出る (再投資します) とする場合もみてみます。
+わかりにくいですが以下のファンド A が分配金 3%, B が分配金 0% (前の B と同じ) の結果です。</p>
+
+<figure class="center">
+    <img src="/media/portfolio/tax.png"
+         alt="分配金 3% vs. 0%"/> 
+</figure>
+
+
+<p>分配金 3% (ファンド A) は 18,405,087 円のプラスになります。分配金なし (ファンド B) に比べて最終的な利益は 300 万円ほど少ないです。
+このように、手数料と税金による影響は長期投資にとって大きな問題となります。</p>
+
+<h2 id="wealthnavi-のポートフォリオを投資信託で再現する">WealthNavi のポートフォリオを投資信託で再現する</h2>
+
+<p>というわけで、WealthNavi のポートフォリオをそのまま自分でやればいいじゃんという発想に行き着きます。
+しかし、ETF を WealthNavi の通りの割合で買おうとすると、かなりの現金が必要になってしまいます。</p>
+
+<p>例えばポートフォリオの 5% を占める AGG は現在 1 口 107 ドルです。ということは、単純計算で最低 2140 ドル必要になります。
+もちろんそれぞれの ETF は 1 口あたりの金額が違いますから、割合を綺麗に揃えようとするとさらに多くのお金が必要になることは容易に想像できます。
+しかも特定口座の場合、それぞれの 1 回の購入ごとに手数料が 5 ドルもかかります。
+手数料の影響を抑えるにはかなりの大口で買う必要があります。</p>
+
+<p>そこで、投資信託で代用しようというのがこの記事の考えです。
+投資信託にも国別のインデックス連動型の商品が多数揃えられていますので、WealthNavi がポートフォリオに組み入れている ETF の構成を分解し、それを再現できる金融商品を組み合わせてポートフォリオを作ります。
+投資信託でしたら小さい単位で買うことが前提になっているので、割合を揃えることも簡単ですし手数料も商品を選べば少なく済みます。</p>
+
+<p>また、税金の繰り延べ効果を狙うため、月 4 万円の企業型の確定拠出年金の枠を使います。
+これは私個人の勤めている会社で強制されているためで、iDeco が使えないためです。
+それを補助する形で特定口座に月 2 万円の投資信託をいくつか組み合わせて積み立てていきます。</p>
+
+<p>ちなみに、 NISA は使いません。
+なぜなら、普通の NISA では 5 年、つみたて NISA でも 20 年しか非課税にならないためです。
+NISA は別記事で取り上げる予定の中期投資に使います。</p>
+
+<p>最後に、私は SBI で資産運用をしているので、楽天 VTI や楽天 VWO は使えません。
+また、企業型確定拠出年金にはそのような便利な金融商品が導入される気がしないので、こういう無理やりな方法をとっています。
+もしかすると、楽天証券のほうが正確に WealthNavi のポートフォリオを再現できるかもしれません。</p>
+
+<h2 id="国ごとの割合を換算する">国ごとの割合を換算する</h2>
+
+<p>各 ETF の国別割合はおおよそ以下になります。</p>
+
+<ul>
+<li>VTI: 米国 100%</li>
+<li>VEA: 日本 20%、その他先進国 80%</li>
+<li>VWO: 中国 30%、その他新興国 70%</li>
+</ul>
+
+<p>最初の円グラフの WealthNavi のポートフォリオに含まれる割合を国別に換算すると、</p>
+
+<ul>
+<li>米国: 33.7%</li>
+<li>日本: VEA 33.8% のうち 20% = 6.8%</li>
+<li>その他先進国: VEA 33.8% のうち 80% = 27%</li>
+<li>中国: 14.5% のうち 30% = 4.4</li>
+<li>その他新興国: 14.5% のうち 70% = 10.2%</li>
+</ul>
+
+<p>この割合を目指して指標連動型の投資信託に割り振ることになります。</p>
+
+<h2 id="最終的なポートフォリオ">最終的なポートフォリオ</h2>
+
+<p>ここからは、私が色々な組み合わせを試行錯誤して決めたポートフォリオを記録します。
+私個人の問題として、企業型確定拠出年金が提供している商品に限りがあり、選べるパターンが限られてしまっています。
+その結果、それなりに複雑になっています。多くの方にはより良い組み合わせがあると思います。</p>
+
+<p>企業型確定拠出年金には月 4 万円、特定口座の投資信託にはおよそ月 2.3 万円を積み立てていきます。</p>
+
+<figure class="center">
+    <img src="/media/portfolio/portfolio.png"
+         alt="最終的なポートフォリオ"/> 
+</figure>
+
+
+<p>最初の2つが企業型確定拠出年金の商品で、残りは SBI で買える投資信託です。
+確定拠出年金の商品が少ないので苦労しました。</p>
+
+<p>全ての商品はインデックスで、かつ分配や為替ヘッジのなく、信託報酬が低いものを選んでいます。</p>
+
+<p>国別・資産別でみると、</p>
+
+<figure class="center">
+    <img src="/media/portfolio/portfolio-country.png"
+         alt="最終的なポートフォリオ"/> 
+</figure>
+
+
+<p>となります。WealthNavi よりも少し米国株と新興国株が多め、米国以外の先進国や株式以外のアセットが少なめです。
+今後定期的に WealthNavi のようにリバランスしていく必要がありますが、しばらくはこの割合でいきます。</p>
+
+<p>以下、自分用メモです。</p>
+
+<h2 id="ポートフォリオ詳細">ポートフォリオ詳細</h2>
+
+<h1 id="1-日興インデックスファンド海外株式ヘッジなし-dc-専用">1) 日興インデックスファンド海外株式ヘッジなし (DC 専用)</h1>
+
+<p>手数料は 0.27% で, MSCI コクサイに連動しています。 MSCI コクサイは米国株が 65%, 日本覗く先進国が残り 35% の割合になっています。
+私は企業型拠出年金に拠出される 4 万円の 90% を当てています。
+計算すると、米国株に月 2.34 万円、日本覗く先進国株に月 1.26 万円割り振っています。</p>
+
+<h1 id="2-三菱-ufj-dc-トピックスオープン">2) 三菱 UFJ DC トピックスオープン</h1>
+
+<p>こちらは手数料が 0.27%, 日経 TOPIX に連動します。
+私は企業型拠出年金に拠出される 4 万円の 10% を当てています。
+日本株に月 0.4 万円割り振っています。</p>
+
+<h1 id="3-emaxis-slim-新興国株式インデックス">3) eMAXIS Slim 新興国株式インデックス</h1>
+
+<p>手数料 0.2% で、MSI エマージングに連動しています。
+私は特定口座の投資信託に積み立てている 2.3 万円の 60% = 1.4 万円を当てています。
+各国の割合を計算すると、中国株に 1.2 万円の 28%  = 0.39 万円、韓国株に 1.2 万円の 16% = 0.22 万円、中韓除く新興国株 1.2 万円の 56% = 0.77 万円に割り振っています。
+韓国は VEA に含まれるので別に集計しています。
+こちらは 1 営業日あたり 600 円積み立てています。</p>
+
+<h1 id="4-iシェアーズゴールドインデックス">4) iシェアーズゴールドインデックス</h1>
+
+<p>手数料0.50% で、金の価格に連動しています。
+私は特定口座の投資信託に積み立てている 2.3 万円の 20% = 0.46 万円を当てています。
+こちらは 1 営業日あたり 200 円積み立てています。</p>
+
+<h1 id="5-emaxis-slim先進国債インデックス">5) eMAXIS Slim先進国債インデックス</h1>
+
+<p>手数料0.18% で、先進国の国債の価格に連動しています。
+私は特定口座の投資信託に積み立てている 2.3 万円の 10% = 0.23 万円を当てています。
+厳密には米国の債券ではありませんが、似たようなものと思っています。
+こちらは 1 営業日あたり 100 円積み立てています。</p>
+
+<h1 id="6-ニッセイグローバルリートインデックス">6) ニッセイグローバルリートインデックス</h1>
+
+<p>手数料0.29% で、先進国の REIT (不動産) の価格に連動しています。
+私は特定口座の投資信託に積み立てている 2.3 万円の 10% = 0.23 万円を当てています。
+こちらは 1 営業日あたり 100 円積み立てています。</p></div>
+
+  <footer class="article-footer">
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&title=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&text=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&t=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f&title=%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%5b%e9%95%b7%e6%9c%9f%e6%a0%aa%e5%bc%8f%e6%8a%95%e8%b3%87%5d%20WealthNavi%20%e3%81%ae%e3%83%9d%e3%83%bc%e3%83%88%e3%83%95%e3%82%a9%e3%83%aa%e3%82%aa%e3%82%92%e5%88%a5%e3%81%ae%e6%8a%95%e8%b3%87%e4%bf%a1%e8%a8%97%e3%81%a7%e5%86%8d%e7%8f%be%e3%81%99%e3%82%8b https%3a%2f%2fshusio.com%2fpost%2fportfolio%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="https://shusio.com/"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://shusio.com/post/" itemprop="url"><span itemprop="title">POST</span></a></li>
+            
+            <li class="active">[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://shusio.com/categories/">CATEGORIES</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://shusio.com/categories/%E9%95%B7%E6%9C%9F%E6%A0%AA%E5%BC%8F%E6%8A%95%E8%B3%87/">長期株式投資</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="https://shusio.com/tags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="https://shusio.com/tags/%E6%8A%95%E8%B3%87/">投資</a></li>
+          
+          <li><a href="https://shusio.com/tags/%E7%A2%BA%E5%AE%9A%E6%8B%A0%E5%87%BA%E5%B9%B4%E9%87%91/">確定拠出年金</a></li>
+          
+          <li><a href="https://shusio.com/tags/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97/">投資信託</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    <div class="adj">
+      <div class="mrow">
+        
+        
+      </div>
+    </div>
+
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-shusio-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+  <div class="mcol c4">
+    <aside class="l-sidebar">
+
+  <div class="sections sidebar">
+    
+<section class="sidebar">
+  <header>AUTHOR</header>
+  <div>
+    <div class="author">
+      
+      <div class="author-thumb" style="background-image: url(https://shusio.com/media/author.png);"></div>
+      
+      <div class="author-name">shusio</div>
+      <ul class="author-facts">
+        
+        <li><a href="https://twitter.com/shusio1" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="https://github.com/4XSA5yltIDO0Hcuw" rel="nofollow" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      </ul>
+      <div class="author-description"><p>情報系の研究員、30代。</p></div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="sidebar">
+  <header>LATESTS</header>
+  <div>
+    <div class="articles sm">
+      
+      <article class="lism">
+  <a href="https://shusio.com/post/portfolio/">
+    <div class="thumb thumb-ff641c752faff0b0c8d60960642aa6bd"></div>
+
+    <div class="inner">
+      <div class="title">[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-17T16:54:43JST">Feb 17, 2019</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>POST</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+      <article class="lism">
+  <a href="https://shusio.com/about/">
+    <div class="thumb thumb-6083a88ee3411b0d17ce02d738f69d47"></div>
+
+    <div class="inner">
+      <div class="title">このブログについて</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-02-11T00:00:00JST">Feb 11, 2019</time></li>
+        
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+      
+    </div>
+  </div>
+</section>
+
+    
+<section class="sidebar">
+  <header>CATEGORIES</header>
+  <div>
+    <ul class="terms">
+      <li><a href="https://shusio.com/categories/%E9%95%B7%E6%9C%9F%E6%A0%AA%E5%BC%8F%E6%8A%95%E8%B3%87">長期株式投資 <span class="count">(1)</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+    
+<section class="sidebar">
+  <header>TAGS</header>
+  <div>
+    <ul class="terms">
+      <li><a href="https://shusio.com/tags/%E6%8A%95%E8%B3%87">投資 <span class="count">(1)</span></a></li><li><a href="https://shusio.com/tags/%E6%8A%95%E8%B3%87%E4%BF%A1%E8%A8%97">投資信託 <span class="count">(1)</span></a></li><li><a href="https://shusio.com/tags/%E7%A2%BA%E5%AE%9A%E6%8B%A0%E5%87%BA%E5%B9%B4%E9%87%91">確定拠出年金 <span class="count">(1)</span></a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+  </div>
+
+</aside>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p><span class="h-logo">&copy; Shusio の研究レポート</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

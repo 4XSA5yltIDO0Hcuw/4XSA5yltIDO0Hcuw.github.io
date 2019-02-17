@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shusio のメモ</title>
+    <title>Shusio の研究レポート</title>
     <link>https://shusio.com/</link>
-    <description>Recent content on Shusio のメモ</description>
+    <description>Recent content on Shusio の研究レポート</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Tue, 12 Feb 2019 23:13:49 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 16:54:43 +0900</lastBuildDate>
     
 	<atom:link href="https://shusio.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>テスト</title>
-      <link>https://shusio.com/post/rss/</link>
-      <pubDate>Tue, 12 Feb 2019 23:13:49 +0900</pubDate>
+      <title>[長期株式投資] WealthNavi のポートフォリオを別の投資信託で再現する</title>
+      <link>https://shusio.com/post/portfolio/</link>
+      <pubDate>Sun, 17 Feb 2019 16:54:43 +0900</pubDate>
       
-      <guid>https://shusio.com/post/rss/</guid>
-      <description>Twitter へ自動投稿できるかテストします。</description>
-    </item>
-    
-    <item>
-      <title>初投稿</title>
-      <link>https://shusio.com/post/my-first-post/</link>
-      <pubDate>Mon, 11 Feb 2019 10:05:08 +0900</pubDate>
-      
-      <guid>https://shusio.com/post/my-first-post/</guid>
-      <description>&lt;p&gt;はじめまして！
-テストも兼ねて Hugo で遊んでみます。&lt;/p&gt;</description>
+      <guid>https://shusio.com/post/portfolio/</guid>
+      <description>&lt;p&gt;手数料が高いという WealthNavi のポートフォリオを別の投資信託で再現してみました。
+これでどこまで資産を伸ばせるかブログに記録していきます。&lt;/p&gt;</description>
     </item>
     
     <item>
